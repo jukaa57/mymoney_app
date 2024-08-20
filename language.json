@@ -1,0 +1,106 @@
+{
+    "en": {
+        "SignUp":{
+            "label": [
+                "Name",
+                "Email",
+                "Password",
+                "Confirm Password"
+            ],
+            "placeholder": [
+                "Jhon Alex",
+                "mail@example.com",
+                "Password (8 characters, letters and numbers)",
+                "Confirm Password"
+            ],
+            "button": "Sign Up",
+            "other": "I have an Account"
+        },
+        "SignIn":{
+            "label": [
+                "Email",
+                "Password"
+            ],
+            "placeholder": [
+                "mail@example.com",
+                "Type your password"
+            ],
+            "button": "Sign In",
+            "other": "I don't have an account"
+        },
+        "ValidateCode":{
+            "title":    "We sent you a code to your email!",
+            "label": "Enter the code",
+            "button": "Send",
+            "resend": "I didn't receive it, send it to me again!"
+        },
+        "Home": {
+            "Painel": [
+                "Hi",
+                "Friend",
+                "Balance",
+                "Next Move"
+            ],
+            "Dashboard": [
+                "Resume History",
+                "Resume Next Bills",
+                "Resume Next Receipts",
+                "Resume Investments",
+                "See More"
+            ]
+                
+        }
+    },
+    "br": {
+        "SignUp": {
+            "label": [
+                "Nome",
+                "Email",
+                "Senha",
+                "Confirmar Senha"
+            ],
+            "placeholder": [
+                "Jhon Alex",
+                "mail@example.com",
+                "Senha (8 caracteres, letras e números)",
+                "Confirmar Senha"
+            ],
+            "button": "Criar Conta",
+            "other": "Já tenho Conta"
+        },
+        "SignIn": {
+            "label": [
+                "Email",
+                "Senha"
+            ],
+            "placeholder": [
+                "mail@example.com",
+                "Digite sua senha"
+            ],
+            "button": "Entrar",
+            "other": "Ainda não tenho Conta"
+        },
+        "ValidateCode":{
+            "title": "Te enviamos um código no seu email!",
+            "label": "Digite o código",
+            "button": "Enviar",
+            "resend": "Não recebi, me envie novamente!"
+        },
+        "Home": {
+            "Painel": [
+                "Olá",
+                "Amigo",
+                "Saldo",
+                "Próx. Movimentação"
+            ],
+            "Dashboard": [
+                "Resumo Histórico",
+                "Resumo Próx. Pagamentos",
+                "Resumo Próx. Receitas",
+                "Resumo Investimentos",
+                "Veja Mais"
+            ]
+                
+        }
+    }
+}
