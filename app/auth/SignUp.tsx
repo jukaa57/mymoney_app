@@ -43,6 +43,7 @@ export default function SignUp() {
   } = useForm ({
     resolver: zodResolver(signUpSchema),
   })
+  
   const navigation = useNavigation();
 
   useEffect(() => {

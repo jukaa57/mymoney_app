@@ -1,0 +1,210 @@
+{
+  "Icons":[
+    { "name": "attach-money", "label": "Receitas", "category": "finance" },
+    { "name": "money-off", "label": "Despesas", "category": "finance" },
+    { "name": "credit-card", "label": "Cartão de Crédito", "category": "payment" },
+    { "name": "local-atm", "label": "Caixa Eletrônico", "category": "banking" },
+    { "name": "local-grocery-store", "label": "Compras", "category": "shopping" },
+    { "name": "shopping-bag", "label": "Compras de Mercado", "category": "shopping" },
+    { "name": "restaurant", "label": "Restaurantes", "category": "food" },
+    { "name": "local-cafe", "label": "Café e Lanches", "category": "food" },
+    { "name": "local-bar", "label": "Bares e Bebidas", "category": "food" },
+    { "name": "directions-car", "label": "Transporte", "category": "transport" },
+    { "name": "local-gas-station", "label": "Combustível", "category": "transport" },
+    { "name": "home", "label": "Aluguel e Moradia", "category": "housing" },
+    { "name": "bolt", "label": "Conta de Luz", "category": "utilities" },
+    { "name": "water-drop", "label": "Conta de Água", "category": "utilities" },
+    { "name": "wifi", "label": "Internet", "category": "utilities" },
+    { "name": "phone", "label": "Telefone", "category": "utilities" },
+    { "name": "receipt", "label": "Impostos", "category": "taxes" },
+    { "name": "medical-services", "label": "Saúde", "category": "health" },
+    { "name": "school", "label": "Educação", "category": "education" },
+    { "name": "sports-basketball", "label": "Lazer", "category": "entertainment" },
+    { "name": "flight", "label": "Viagens", "category": "travel" },
+    { "name": "savings", "label": "Poupança", "category": "finance" },
+    { "name": "trending-up", "label": "Investimentos", "category": "finance" },
+    { "name": "work", "label": "Salário", "category": "income" },
+    { "name": "business", "label": "Negócios", "category": "business" },
+    { "name": "group", "label": "Salários de Funcionários", "category": "business" },
+    { "name": "commute", "label": "Deslocamento de Trabalho", "category": "business" },
+    { "name": "build", "label": "Manutenção", "category": "maintenance" },
+    { "name": "security", "label": "Seguros", "category": "insurance" }
+  ],
+  "Tags": {
+    "en":[
+      {
+        "category": "finance",
+        "borderColor": "#4CAF50",
+        "backgroundColor": "#388E3C"
+      },
+      {
+        "category": "payment",
+        "borderColor": "#FF9800",
+        "backgroundColor": "#F57C00"
+      },
+      {
+        "category": "banking",
+        "borderColor": "#2196F3",
+        "backgroundColor": "#1976D2"
+      },
+      {
+        "category": "shopping",
+        "borderColor": "#9C27B0",
+        "backgroundColor": "#7B1FA2"
+      },
+      {
+        "category": "food",
+        "borderColor": "#FF5722",
+        "backgroundColor": "#E64A19"
+      },
+      {
+        "category": "transport",
+        "borderColor": "#009688",
+        "backgroundColor": "#00796B"
+      },
+      {
+        "category": "housing",
+        "borderColor": "#3F51B5",
+        "backgroundColor": "#303F9F"
+      },
+      {
+        "category": "utilities",
+        "borderColor": "#673AB7",
+        "backgroundColor": "#512DA8"
+      },
+      {
+        "category": "taxes",
+        "borderColor": "#F44336",
+        "backgroundColor": "#D32F2F"
+      },
+      {
+        "category": "health",
+        "borderColor": "#E91E63",
+        "backgroundColor": "#C2185B"
+      },
+      {
+        "category": "education",
+        "borderColor": "#FFC107",
+        "backgroundColor": "#FFA000"
+      },
+      {
+        "category": "entertainment",
+        "borderColor": "#8BC34A",
+        "backgroundColor": "#689F38"
+      },
+      {
+        "category": "travel",
+        "borderColor": "#00BCD4",
+        "backgroundColor": "#0097A7"
+      },
+      {
+        "category": "income",
+        "borderColor": "#CDDC39",
+        "backgroundColor": "#AFB42B"
+      },
+      {
+        "category": "business",
+        "borderColor": "#795548",
+        "backgroundColor": "#5D4037"
+      },
+      {
+        "category": "maintenance",
+        "borderColor": "#607D8B",
+        "backgroundColor": "#455A64"
+      },
+      {
+        "category": "insurance",
+        "borderColor": "#009688",
+        "backgroundColor": "#00796B"
+      }
+    ],
+    "br": [
+      {
+        "category": "finanças",
+        "borderColor": "#4CAF50",
+        "backgroundColor": "#388E3C"
+      },
+      {
+        "category": "pagamentos",
+        "borderColor": "#FF9800",
+        "backgroundColor": "#F57C00"
+      },
+      {
+        "category": "bancos",
+        "borderColor": "#2196F3",
+        "backgroundColor": "#1976D2"
+      },
+      {
+        "category": "compras",
+        "borderColor": "#9C27B0",
+        "backgroundColor": "#7B1FA2"
+      },
+      {
+        "category": "alimentação",
+        "borderColor": "#FF5722",
+        "backgroundColor": "#E64A19"
+      },
+      {
+        "category": "transporte",
+        "borderColor": "#009688",
+        "backgroundColor": "#00796B"
+      },
+      {
+        "category": "moradia",
+        "borderColor": "#3F51B5",
+        "backgroundColor": "#303F9F"
+      },
+      {
+        "category": "utilidades",
+        "borderColor": "#673AB7",
+        "backgroundColor": "#512DA8"
+      },
+      {
+        "category": "impostos",
+        "borderColor": "#F44336",
+        "backgroundColor": "#D32F2F"
+      },
+      {
+        "category": "saúde",
+        "borderColor": "#E91E63",
+        "backgroundColor": "#C2185B"
+      },
+      {
+        "category": "educação",
+        "borderColor": "#FFC107",
+        "backgroundColor": "#FFA000"
+      },
+      {
+        "category": "lazer",
+        "borderColor": "#8BC34A",
+        "backgroundColor": "#689F38"
+      },
+      {
+        "category": "viagens",
+        "borderColor": "#00BCD4",
+        "backgroundColor": "#0097A7"
+      },
+      {
+        "category": "renda",
+        "borderColor": "#CDDC39",
+        "backgroundColor": "#AFB42B"
+      },
+      {
+        "category": "negócios",
+        "borderColor": "#795548",
+        "backgroundColor": "#5D4037"
+      },
+      {
+        "category": "manutenção",
+        "borderColor": "#607D8B",
+        "backgroundColor": "#455A64"
+      },
+      {
+        "category": "seguros",
+        "borderColor": "#009688",
+        "backgroundColor": "#00796B"
+      }
+    ]
+  }
+    
+}

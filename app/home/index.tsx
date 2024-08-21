@@ -12,18 +12,18 @@ export default function HomeScreen() {
     balance: 12345.67,
     profile: 'https://wild-avatar-kingdom.netlify.app/images/birds/owlavatar.png'
   }
+
   return (
-    <ScrollView>
-      <View style={{ flex: 1, gap: 10, paddingTop: 40, justifyContent: "center", alignItems: 'center', backgroundColor}}>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={{ flex: 1, gap: 10, paddingTop: 40, paddingBottom: 15, justifyContent: "center", alignItems: 'center', backgroundColor}}>
         <Painel
           data={data}
         />
 
-        <NavBar />
-       
-  
-        <Dashboard 
-
+        <NavBar
+        />
+         
+        <Dashboard
         />
       </View>
     </ScrollView>

@@ -1,16 +1,17 @@
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { MaterialIcons, MaterialCommunityIcons,  } from "@expo/vector-icons";
 import { useThemeColor } from "@/hooks/useThemeColor";
+import { router } from "expo-router";
 
 export function NavBar() {
     const backgroundColor = useThemeColor({light: '', dark: ''},'background2')
     const primaryColor = useThemeColor({light: '', dark: ''},'primary')
-    const icon = useThemeColor({light: '', dark: ''}, 'icon')
+    const icon = useThemeColor({light: '', dark: ''}, 'secondary')
 
     const btnData = [
         {
             name: 'currency-usd',
-            router: '/add'
+            router: '/addFunds'
         },
         {
             name: 'currency-usd-off',
@@ -34,7 +35,7 @@ export function NavBar() {
         <View style={[style.container, {backgroundColor}]}>
             {
             btnData.map(btn => (
-                <TouchableOpacity style={[style.button, {backgroundColor: primaryColor}]} activeOpacity={0.7}>
+                <TouchableOpacity style={[style.button, {backgroundColor: primaryColor}]} activeOpacity={0.7} onPress={() => router.push(btn.router) }>
                     <MaterialCommunityIcons name={btn?.name} size={24} color={icon}/>
                 </TouchableOpacity>
             ))

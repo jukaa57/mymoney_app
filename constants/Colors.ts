@@ -19,7 +19,7 @@ export const Colors = {
     placeholder: '#3f3f3f',
     recept: '#03C02D',
     billing: '#F84035',
-
+    secondary: "#88F4FF",
   },
   dark: {
     text: '#ECEDEE',
@@ -33,5 +33,6 @@ export const Colors = {
     placeholder: '#3f3f3f',
     recept: '#03C02D',
     billing: '#F84035',
+    secondary: "#88F4FF",
   },
 };

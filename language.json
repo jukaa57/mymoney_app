@@ -47,8 +47,13 @@
                 "Resume Next Receipts",
                 "Resume Investments",
                 "See More"
+            ]                
+        },
+        "AddFunds": {
+            "header":[
+                "Add Funds",
+                "Insert the value that yot want"
             ]
-                
         }
     },
     "br": {
@@ -101,6 +106,13 @@
                 "Veja Mais"
             ]
                 
+        },
+        "AddFunds": {
+            "header": [
+                "Adicionar Fundos",
+                "Insira o valor que deseja adicionar",
+                "Adicionar"
+            ]
         }
     }
 }
