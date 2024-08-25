@@ -52,7 +52,15 @@
         "AddFunds": {
             "header":[
                 "Add Funds",
-                "Insert the value that yot want"
+                "Insert the value that yot want",
+                "Add"
+            ],
+            "contant": [
+                "Choose a Date",
+                "Recurrent",
+                "Description",
+                "Category",
+                "Tag"
             ]
         }
     },
@@ -112,6 +120,14 @@
                 "Adicionar Fundos",
                 "Insira o valor que deseja adicionar",
                 "Adicionar"
+            ],
+            "contant": [
+                "Escolha uma Data",
+                "Recorrente",
+                "Descrição",
+                "Categoria",
+                "Tag"
+
             ]
         }
     }
