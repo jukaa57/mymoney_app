@@ -3,28 +3,33 @@ import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View,  } fro
 import { ThemedText } from '@/components/ThemedText'
 import { useNavigation } from 'expo-router';
 import { useThemeColor } from '@/hooks/useThemeColor';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons,  } from '@expo/vector-icons';
 import language from '@/language.json';
 import { Calendar } from 'react-native-calendars';
 import { Tags, Icons } from '@/configs/config.json';
+import { moneyMask } from '@/services/util';
 
-export default function AddFunds() {
+export default function AddReceipts() {
     const backgroundColor = useThemeColor({}, 'background');
     const backgroundColor2 = useThemeColor({}, 'background2');
+    const primary = useThemeColor({}, 'primary');
+    const blueColor = useThemeColor({}, 'secondary');
+    const red = useThemeColor({}, 'billing');
     const icon = useThemeColor({}, 'text');
     const recept = useThemeColor({}, 'recept');
-    const lang = language['en'].AddFunds
+    const lang = language['en'].AddReceipts
     const navigation = useNavigation();
 
+    const [amount, setAmount] = useState('')
     const [openCalendar, setOpenCalendar] = useState(false)
+    const [category, setCategory] = useState('')
     const [selectedDate, setSelectedDate] = useState(() => {
         let date = new Date().toISOString().split('T')[0]
         let [y, m, d]:any = date.split('-')
 
         return `${d}/${m}/${y}`
     })
-
-    const [category, setCategory] = useState('')
+    
 
     // useEffect(() => {
     //   // Oculta o header para esta tela específica
@@ -34,7 +39,6 @@ export default function AddFunds() {
     function toggleCalendar() {
         setOpenCalendar(!openCalendar);
     }
-
     function onDateChange(date: string) {
         let [y, m, d]:any = date.split('-')
         setSelectedDate(`${d}/${m}/${y}`);
@@ -59,13 +63,16 @@ export default function AddFunds() {
                 <ThemedText style={{alignSelf: 'flex-start'}} type='subtitle'>
                     {lang.header[0]}
                 </ThemedText>
-                <View style={styles.RowContain}>
-                    <MaterialIcons name='attach-money' size={36} color={recept}/>
-                    <TextInput style={styles.inpt}/>
-                </View>
 
                 <View>
                     <ThemedText> {lang.contant[0]} </ThemedText>
+                    <TextInput
+                    style={styles.descr}
+                    />
+                </View>
+
+                <View>
+                    <ThemedText> {lang.contant[1]} </ThemedText>
                     <TouchableOpacity
                     style={styles.btnCalendar}
                     onPress={toggleCalendar}
@@ -74,50 +81,57 @@ export default function AddFunds() {
                         <ThemedText> {selectedDate} </ThemedText>
                     </TouchableOpacity>
                 </View>
-                {
-                openCalendar &&
-                <Calendar
-                style={styles.calendar}
-                theme={{
-                    backgroundColor: '#fff',
-                    calendarBackground: '#000',
-                    textSectionTitleColor: '#b6c1cd',
-                    selectedDayBackgroundColor: '#00adf5',
-                    selectedDayTextColor: '#ffffff',
-                    todayTextColor: '#00adf5',
-                    dayTextColor: '#2d4150',
-                    textDisabledColor: '#d9e'
-                }}
-                onDayPress={(day: string) => {
-                    onDateChange(day.dateString);
-                }}
-                markedDates={{
-                    [selectedDate]: {selected: true, disableTouchEvent: true, selectedDotColor: 'orange'}
-                }}
-                />
-                }
+                <>
+                    {
+                        openCalendar &&
+                        <Calendar
+                        style={styles.calendar}
+                        theme={{
+                            backgroundColor: '#fff',
+                            calendarBackground: '#000',
+                            textSectionTitleColor: '#b6c1cd',
+                            selectedDayBackgroundColor: '#00adf5',
+                            selectedDayTextColor: '#ffffff',
+                            todayTextColor: '#00adf5',
+                            dayTextColor: '#2d4150',
+                            textDisabledColor: '#d9e'
+                        }}
+                        onDayPress={(day: string) => {
+                            onDateChange(day.dateString);
+                        }}
+                        markedDates={{
+                            [selectedDate]: {selected: true, disableTouchEvent: true, selectedDotColor: 'orange'}
+                        }}
+                        />
+                    }
+                </>
 
                 <View style={[styles.RowContain, {alignItems: 'flex-end', justifyContent: 'space-between', width: 300, }]}>
                     <View style={[styles.RowContain, {alignItems: 'center', justifyContent: 'center', }]}>
                         <MaterialIcons name='sync' size={24} color={icon}/>
-                        <ThemedText> {lang.contant[1]} </ThemedText>
+                        <ThemedText> {lang.contant[2]} </ThemedText>
                     </View>
 
                     <View>
-                        <ThemedText> Teste </ThemedText>
+                        <ThemedText> {lang.contant[3]} </ThemedText>
                         <TextInput style={styles.inptRecurr}/>
                     </View>
                 </View>
 
+                <View style={styles.RowContain}>
+                    <MaterialIcons name='attach-money' size={36} color={recept}/>
+                    <TextInput keyboardType='numeric' inputMode='numeric' style={styles.inpt} value={amount} onChangeText={e => setAmount(moneyMask(e))} />
+                </View>
+                
                 <View>
-                    <ThemedText> {lang.contant[2]} </ThemedText>
+                    <ThemedText> {lang.contant[4]} </ThemedText>
                     <TextInput
                     style={styles.memo}
                     />
                 </View>
-                
+
                 <View>
-                    <ThemedText> {lang.contant[3]} </ThemedText>
+                    <ThemedText> {lang.contant[5]} </ThemedText>
                     <View
                     style={[styles.wrap, {backgroundColor: backgroundColor2}]}
                     >
@@ -141,16 +155,28 @@ export default function AddFunds() {
                         )}
                     </View>
                 </View>
-                
+
                 <View>
-                    <ThemedText>{lang.contant[4]}</ThemedText>
+                    <ThemedText>{lang.contant[6]}</ThemedText>
                     <View style={[styles.wrap, {backgroundColor: backgroundColor2}]}>
-                    {
-                        filterIcon()
-                    }  
+                    { filterIcon() }  
                     </View>
                 </View>
+                <View>
+                    <ThemedText>{lang.contant[7]}</ThemedText>
+                    <TouchableOpacity style={[styles.file, {backgroundColor: backgroundColor2,}]} activeOpacity={0.8}>
+                        <ThemedText type='subtitle'>{lang.contant[8]}</ThemedText>
+                    </TouchableOpacity>
 
+                </View>
+
+                <TouchableOpacity style={[styles.button, {backgroundColor: primary, marginTop: 40,}]} activeOpacity={0.8}>
+                    <ThemedText type='subtitle'>{lang.contant[9]}</ThemedText>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={[styles.button, {backgroundColor: red, }]} activeOpacity={0.8}>
+                    <ThemedText type='subtitle'>{lang.contant[10]}</ThemedText>
+                </TouchableOpacity>
             </View>
         </ScrollView>
     )
@@ -159,11 +185,12 @@ export default function AddFunds() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        gap: 10,
+        gap: 15,
         paddingTop: 40,
         paddingHorizontal: 20,
         justifyContent: "center",
         alignItems: 'center',
+        paddingBottom: 15
     },
     RowContain: {
         flexDirection: 'row',
@@ -175,11 +202,16 @@ const styles = StyleSheet.create({
         width: 197,
         height: 55,
         borderRadius: 10,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        paddingHorizontal: 10,
+        fontSize: 24,
+        fontWeight: '600',
+        textAlign: 'right'
     },
     inptRecurr: {
         width: 97,
-        height: 24,
+        height: 40,
+        paddingHorizontal: 10,
         borderRadius: 5,
         backgroundColor: 'white'
     },
@@ -201,6 +233,14 @@ const styles = StyleSheet.create({
         top: 0,
         left: -170
     },
+    descr: {
+        height: 40,
+        width: 300,
+        borderRadius: 8,
+        backgroundColor: 'white',
+        paddingHorizontal: 10,
+        paddingVertical: 2
+    },
     memo: {
         height: 70,
         width: 300,
@@ -217,7 +257,25 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 15,
         gap: 12,
-        padding:10
+        padding:10,
+        borderRadius: 8
+    },
+    file: {
+        width: 300,
+        height: 45,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 8,
+        borderWidth: 2,
+        borderStyle: 'dashed',
+        borderColor: '#ccc'
+    },
+    button : {
+        width: 300,
+        height: 50,        
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 15,
     }
 })
 

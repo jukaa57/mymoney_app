@@ -9,7 +9,7 @@ export function ResumeHistory() {
     const backgroundColor = useThemeColor({}, 'primary')
     const bill = useThemeColor({}, 'billing')
     const recept = useThemeColor({}, 'recept')
-    const icon = useThemeColor({}, 'text')
+    const icon = useThemeColor({}, 'icon')
     let locale: 'br' | 'en' = 'en'
     const lang = language[locale].Home
 

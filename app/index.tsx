@@ -6,22 +6,23 @@ import SignIn from './auth/SignIn';
 import HomeScreen from './home';
 
 export default function root() {
-    const { isAuthenticated } = useAuth();
-    useEffect((): any => {
-      if (!isAuthenticated) {
- 
-      } else {
+  const { isAuthenticated } = useAuth();
+  useEffect((): any => {
+    if (!isAuthenticated) {
 
-    }
-    }, [isAuthenticated]);
-    return(
-      <>
-        {
-          !isAuthenticated?
-          <SignIn />
-          :
-          <HomeScreen />
-        }    
-      </>
-    )
+    } else {
+
+  }
+  }, [isAuthenticated]);
+  
+  return(
+    <>
+      {
+        !isAuthenticated?
+        <SignIn />
+        :
+        <HomeScreen />
+      }    
+    </>
+  )
 }

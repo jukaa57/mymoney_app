@@ -11,6 +11,7 @@ import { z } from "zod";
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, Controller } from "react-hook-form"
 import { useAuth } from "@/hooks/useAuth";
+import LogoGoole from '@/assets/svgs/google.svg'
 
 const signInSchema = z.object({
   email: z.string().trim().email(),
@@ -24,7 +25,7 @@ export default function SignIn() {
   const backgroundColor = useThemeColor({}, 'background');
   const color = useThemeColor({}, 'primary');
   const navigation = useNavigation();
-  const { handleSignin } = useAuth()
+  const { handleSignin, handleSignInWithGoogle } = useAuth()
   const passRef = useRef<TextInput>(null);
 
   const {
@@ -43,6 +44,10 @@ export default function SignIn() {
   const onSubmit = handleSubmit(async (data) => {
     handleSignin(data)
   })
+
+  const handleSubmitGoogle = () => {
+    handleSignInWithGoogle()
+  }
 
   return (
     <View
@@ -93,9 +98,17 @@ export default function SignIn() {
         />
         {errors.password && <ThemedText>This is required.</ThemedText>}  
       </View>
-      <ButtonGradient title={lang.SignIn.button} onPress={onSubmit} />
+      <ButtonGradient  title={lang.SignIn.button} onPress={onSubmit} />
+
+      <ThemedText style={{marginBottom: 15}}>{lang.SignIn.other}</ThemedText>
+
+      <TouchableOpacity style={{marginTop: 5, padding: 5, borderRadius: 5, flexDirection: 'row', alignItems: 'center', gap: 15, backgroundColor: '#fff'}} onPress={() => handleSubmitGoogle()}>
+        <LogoGoole width={25} height={40} />
+        <ThemedText style={{color: backgroundColor}} type="defaultSemiBold">{lang.SignIn.google}</ThemedText>
+      </TouchableOpacity>
+
       <TouchableOpacity style={{marginTop: 5}} onPress={() => router.replace('/auth/SignUp')}>
-        <ThemedText style={{color, textDecorationLine: "underline"}}>{lang.SignIn.other}</ThemedText>
+        <ThemedText style={{color, textDecorationLine: "underline"}}>{lang.SignIn.signup}</ThemedText>
       </TouchableOpacity>
     </View>
   );

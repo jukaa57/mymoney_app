@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { api } from '@/services/api';
 import { router } from 'expo-router';
 export function useAuth() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
 //   const handleAuth
     const handleSignup = async (data: any) => {
@@ -46,6 +46,22 @@ export function useAuth() {
         }
     };
 
+    const handleSignInWithGoogle = async () => {
+        // Simulação de autenticação
+        // try {
+            const response = await api.get('/auth/google', )
+            console.log(response)
+            // if(response.status == 200) {
+            //     setIsAuthenticated(true);
+            //     router.replace('/home')
+            // }
+        // } catch (error: any) {
+        //     console.error(error);
+        //     return false;
+        // }
+    };
+
+
     const logout = () => {
         setIsAuthenticated(false);
     };
@@ -55,6 +71,7 @@ export function useAuth() {
         handleSignup,
         handleValideCode,
         handleSignin,
+        handleSignInWithGoogle,
         logout,
     };
 }

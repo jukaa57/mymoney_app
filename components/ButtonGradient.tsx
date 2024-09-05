@@ -13,7 +13,7 @@ export const ButtonGradient = ({title, onPress}: buttonType) => {
     const color = useThemeColor({}, 'text')
     return (
         <TouchableOpacity
-        style={{ marginTop: 40 }}
+        style={{ marginTop: 40, marginBottom: 20  }}
         onPress={onPress}
         >
             <LinearGradient

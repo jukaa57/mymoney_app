@@ -26,7 +26,9 @@
                 "Type your password"
             ],
             "button": "Sign In",
-            "other": "I don't have an account"
+            "other": "OR",
+            "google": "Continue with Google",
+            "signup": "I don't have an account"
         },
         "ValidateCode":{
             "title":    "We sent you a code to your email!",
@@ -49,18 +51,44 @@
                 "See More"
             ]                
         },
-        "AddFunds": {
+        "AddReceipts": {
             "header":[
-                "Add Funds",
+                "Add Receipt",
                 "Insert the value that yot want",
                 "Add"
             ],
             "contant": [
-                "Choose a Date",
-                "Recurrent",
                 "Description",
+                "Date",
+                "Recurrent",
+                "Always Day",
+                "Details",
                 "Category",
-                "Tag"
+                "Icons",
+                "Add Document file",
+                "Add File",
+                "Save",
+                "Cancel"
+            ]
+        },
+        "AddExpense": {
+            "header":[
+                "Add Expense",
+                "Insert the value that yot want",
+                "Add"
+            ],
+            "contant": [
+                "Description",
+                "Date",
+                "Recurrent",
+                "Always Day",
+                "Details",
+                "Category",
+                "Icons",
+                "Add Document file",
+                "Add File",
+                "Save",
+                "Cancel"
             ]
         }
     },
@@ -91,7 +119,9 @@
                 "Digite sua senha"
             ],
             "button": "Entrar",
-            "other": "Ainda não tenho Conta"
+            "other": "OU",
+            "google": "Continuar o Google",
+            "signup": "Ainda não tenho Conta"
         },
         "ValidateCode":{
             "title": "Te enviamos um código no seu email!",
@@ -115,19 +145,42 @@
             ]
                 
         },
-        "AddFunds": {
+        "AddReceipts": {
             "header": [
-                "Adicionar Fundos",
+                "Adicionar Receita",
                 "Insira o valor que deseja adicionar",
                 "Adicionar"
             ],
             "contant": [
-                "Escolha uma Data",
-                "Recorrente",
                 "Descrição",
+                "Data",
+                "Recorrente",
+                "Sempre Dia",
+                "Detalhes",
                 "Categoria",
-                "Tag"
-
+                "Icones",
+                "Adicionar Arquivo",
+                "Salvar",
+                "Cancelar"
+            ]
+        },
+        "AddExpense": {
+            "header": [
+                "Adicionar Despesa",
+                "Insira o valor que deseja adicionar",
+                "Adicionar"
+            ],
+            "contant": [
+                "Descrição",
+                "Data",
+                "Recorrente",
+                "Sempre Dia",
+                "Detalhes",
+                "Categoria",
+                "Icones",
+                "Adicionar Arquivo",
+                "Salvar",
+                "Cancelar"
             ]
         }
     }

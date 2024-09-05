@@ -6,7 +6,7 @@ import { router } from "expo-router";
 export function NavBar() {
     const backgroundColor = useThemeColor({light: '', dark: ''},'background2')
     const primaryColor = useThemeColor({light: '', dark: ''},'primary')
-    const icon = useThemeColor({light: '', dark: ''}, 'secondary')
+    const icon = useThemeColor({light: '', dark: ''}, 'icon')
 
     const btnData = [
         {
