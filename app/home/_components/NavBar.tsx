@@ -11,11 +11,11 @@ export function NavBar() {
     const btnData = [
         {
             name: 'currency-usd',
-            router: '/addFunds'
+            router: '../addReceipts'
         },
         {
             name: 'currency-usd-off',
-            router: '/remove'
+            router: '../addExpense'
         },
         {
             name: 'piggy-bank-outline',

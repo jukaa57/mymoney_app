@@ -1,8 +1,21 @@
 import { useState, useEffect } from 'react';
 import { api } from '@/services/api';
 import { router } from 'expo-router';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 export function useAuth() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    useEffect(() => {
+        (async () => {
+            const token = await AsyncStorage.getItem('accessToken');
+            if(token) {
+                setIsAuthenticated(true);
+            } else {
+                setIsAuthenticated(false);
+            }
+        })()
+    }, [])
 
 //   const handleAuth
     const handleSignup = async (data: any) => {
@@ -37,7 +50,9 @@ export function useAuth() {
         try {
             const response = await api.post('/signin', { email: data.email, password: data.password})
             if(response.status == 200) {
+                let credentials = response.data.accessToken
                 setIsAuthenticated(true);
+                await AsyncStorage.setItem('accessToken', credentials);
                 router.replace('/home')
             }
         } catch (error: any) {
@@ -61,8 +76,8 @@ export function useAuth() {
         // }
     };
 
-
-    const logout = () => {
+    const logout = async () => {
+        await AsyncStorage.removeItem('accessToken');
         setIsAuthenticated(false);
     };
 

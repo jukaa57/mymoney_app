@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View,  } from 'react-native'
+import { Alert, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View,  } from 'react-native'
 import { ThemedText } from '@/components/ThemedText'
 import { useNavigation } from 'expo-router';
 import { useThemeColor } from '@/hooks/useThemeColor';
@@ -29,7 +29,7 @@ export default function AddReceipts() {
 
         return `${d}/${m}/${y}`
     })
-    
+    const [selectedIcon, setSelectedIcon] = useState('')
 
     // useEffect(() => {
     //   // Oculta o header para esta tela específica
@@ -47,16 +47,31 @@ export default function AddReceipts() {
 
     function filterIcon() {
         const filteredIcon = Icons.filter(icon => icon.category === category || icon.label === category)
-       return filteredIcon.map((i) => (
-            <TouchableOpacity key={i.name} activeOpacity={0.7}>
+        return filteredIcon.map((i) => (
+            <TouchableOpacity
+            key={i.name}
+            activeOpacity={0.7} 
+            style={[styles.btnIcon, {backgroundColor: i.name == selectedIcon?'white':'transparent'}]}
+            onPress={() => i.name == selectedIcon ? setSelectedIcon('') : setSelectedIcon(i.name)}
+            >
             {
                 ( i.category === category || i.label === category )&&
-                <MaterialIcons name={i?.name} size={36} color={icon}/> 
+                <MaterialIcons name={i?.name} size={36} color={ i.name == selectedIcon ? backgroundColor : icon}/> 
             }
             </TouchableOpacity>
         ))
     }
     
+    function cancel() {
+        Alert.alert(lang.buttonAction[0], lang.buttonAction[1], [
+            {
+              text: lang.buttonAction[2],
+              style: 'cancel',
+            },
+            {text: lang.buttonAction[3], onPress: () => navigation.goBack() },
+        ])
+    }
+
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={[styles.container, {backgroundColor}]}>
@@ -133,10 +148,14 @@ export default function AddReceipts() {
                 <View>
                     <ThemedText> {lang.contant[5]} </ThemedText>
                     <View
-                    style={[styles.wrap, {backgroundColor: backgroundColor2}]}
+                    style={[styles.wrapContainer, {backgroundColor: backgroundColor2}]}
                     >
+                    <View style={styles.wrap}>
                         {Tags['en'].map(tag => 
-                            <TouchableOpacity key={tag.category} activeOpacity={0.7} onPress={() => setCategory(tag.category)}>
+                            <TouchableOpacity
+                            key={tag.category}
+                            activeOpacity={0.7}
+                            onPress={() => setCategory(tag.category)}>
                                 <Text
                                 style={{
                                     borderWidth: 1, 
@@ -145,7 +164,7 @@ export default function AddReceipts() {
                                     fontSize: 16,
                                     fontWeight: 600,
                                     borderColor: tag.borderColor,
-                                    backgroundColor: tag.backgroundColor,
+                                    backgroundColor: tag.category == category ? tag.borderColor : tag.backgroundColor,
                                     color: icon,
                                     textAlign: 'center',
                                 }}>
@@ -154,14 +173,19 @@ export default function AddReceipts() {
                             </TouchableOpacity>
                         )}
                     </View>
+                    </View>
                 </View>
 
                 <View>
                     <ThemedText>{lang.contant[6]}</ThemedText>
-                    <View style={[styles.wrap, {backgroundColor: backgroundColor2}]}>
-                    { filterIcon() }  
+                    <View style={[styles.wrapContainer, {backgroundColor: backgroundColor2}]}>
+                        <ThemedText>{category}</ThemedText>
+                        <View style={[styles.wrap, ]}>
+                        { filterIcon() }  
+                        </View>
                     </View>
                 </View>
+
                 <View>
                     <ThemedText>{lang.contant[7]}</ThemedText>
                     <TouchableOpacity style={[styles.file, {backgroundColor: backgroundColor2,}]} activeOpacity={0.8}>
@@ -174,7 +198,11 @@ export default function AddReceipts() {
                     <ThemedText type='subtitle'>{lang.contant[9]}</ThemedText>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={[styles.button, {backgroundColor: red, }]} activeOpacity={0.8}>
+                <TouchableOpacity
+                style={[styles.button, {backgroundColor: red, }]}
+                activeOpacity={0.8}
+                onPress={cancel}
+                >
                     <ThemedText type='subtitle'>{lang.contant[10]}</ThemedText>
                 </TouchableOpacity>
             </View>
@@ -249,16 +277,28 @@ const styles = StyleSheet.create({
         paddingHorizontal: 5,
         paddingVertical: 2
     },
-    wrap: {
+    wrapContainer: {
         width: 300,
+        marginBottom: 15,
+        gap: 12,
+        padding:10,
+        borderRadius: 8
+    },
+    wrap: {
+
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 15,
         gap: 12,
-        padding:10,
-        borderRadius: 8
+    },
+    btnIcon: {
+        borderRadius: 5,
+        backgroundColor: 'transparent',
+        padding:2,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     file: {
         width: 300,

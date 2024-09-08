@@ -69,6 +69,12 @@
                 "Add File",
                 "Save",
                 "Cancel"
+            ],
+            "buttonAction": [
+                "Cancel",
+                "do you want to cancel?",
+                "No",
+                "Yes"
             ]
         },
         "AddExpense": {
@@ -89,6 +95,12 @@
                 "Add File",
                 "Save",
                 "Cancel"
+            ],
+            "buttonAction": [
+                "Cancel",
+                "do you want to cancel?",
+                "No",
+                "Yes"
             ]
         }
     },
@@ -162,6 +174,12 @@
                 "Adicionar Arquivo",
                 "Salvar",
                 "Cancelar"
+            ],
+            "buttonAction": [
+                "Cancelar",
+                "Deseja cancelar?",
+                "Não",
+                "Sim"
             ]
         },
         "AddExpense": {
@@ -181,6 +199,12 @@
                 "Adicionar Arquivo",
                 "Salvar",
                 "Cancelar"
+            ],
+            "buttonAction": [
+                "Cancelar",
+                "Deseja cancelar?",
+                "Não",
+                "Sim"
             ]
         }
     }
